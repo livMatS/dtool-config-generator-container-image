@@ -1,5 +1,5 @@
 # sample for calling reusable workflow
-name: dtool-config-ldap-container-image-build-and-test
+name: dtool-config-generator-container-image-build-and-test
 
 on: 
   push:
@@ -9,7 +9,7 @@ on:
 
 jobs:
   build-and-test:
-    uses: jotelha/dtool-framework-workflows/.github/workflows/dtool-lookup-framewok-generic-container-image-build-and-test.yml@master
+    uses: livmats/dtool-framework-workflows/.github/workflows/dtool-lookup-framewok-generic-container-image-build-and-test.yml@master
     with:
       image: jotelha/dtool-config-generator
       service: dtool_config_generator
