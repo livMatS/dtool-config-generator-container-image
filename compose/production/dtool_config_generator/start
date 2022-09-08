@@ -1,0 +1,12 @@
+#!/bin/bash -x
+set -exo pipefail
+
+FLASK_BINDING="${FLASK_BINDING:-127.0.0.1:5000}"
+GUNICORN_OPTS="--bind=${FLASK_BINDING}"
+if [ -n "${SSL_CERT_FILE}" ]; then
+    GUNICORN_OPTS="${GUNICORN_OPTS} --certfile=${SSL_CERT_FILE}"
+fi
+if [ -n "${SSL_KEY_FILE}" ]; then
+    GUNICORN_OPTS="${GUNICORN_OPTS} --keyfile=${SSL_KEY_FILE}"
+fi
+gunicorn ${GUNICORN_OPTS} 'dtool_config_generator:create_app()'

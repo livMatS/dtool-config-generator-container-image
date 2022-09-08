@@ -1,0 +1,25 @@
+{
+  "DTOOL_SMB_SERVER_NAME_test-share": "sambaserver",
+  "DTOOL_SMB_SERVER_PORT_test-share": 445,
+  "DTOOL_SMB_USERNAME_test-share": "guest",
+  "DTOOL_SMB_PASSWORD_test-share": "a-guest-needs-no-password",
+  "DTOOL_SMB_DOMAIN_test-share": "WORKGROUP",
+  "DTOOL_SMB_SERVICE_NAME_test-share": "sambashare",
+  "DTOOL_SMB_PATH_test-share": "dtool",
+
+  {% if s3_credentials -%}
+  "DTOOL_S3_ENDPOINT_test-bucket": "http://s3server:9000",
+  "DTOOL_S3_DATASET_PREFIX_test-bucket": "",
+  "DTOOL_S3_ACCESS_KEY_ID_test-bucket": "{{ s3_credentials.access_key }}",
+  "DTOOL_S3_SECRET_ACCESS_KEY_test-bucket": "{{ s3_credentials.secret_access_key }}",
+  {% endif -%}
+
+  "DTOOL_LOOKUP_SERVER_URL": "https://dtool_lookup_server:5000",
+  "DTOOL_LOOKUP_SERVER_TOKEN_GENERATOR_URL": "https://token_generator_ldap:5001/token",
+  "DTOOL_LOOKUP_SERVER_USERNAME": "testuser",
+  "DTOOL_LOOKUP_SERVER_PASSWORD": "test_password",
+  "DTOOL_LOOKUP_SERVER_VERIFY_SSL": false,
+
+  "DTOOL_USER_EMAIL": "{{ user.email }}",
+  "DTOOL_USER_FULL_NAME": "{{ user.name }}"
+}
