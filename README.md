@@ -10,7 +10,17 @@ Run
 
     docker build -t jotelha/dtool-config-generator -f compose/production/dtool_config_generator/Dockerfile .
 
+## Run
+
+For overriding default templates and binding
+
+    docker run -it -p 5010:5000 -e FLASK_BINDING="0.0.0.0:5000" -v $(pwd)/compose/production/dtool_config_generator/templates:/templates jotelha/dtool-config-generator
+
 ## Environment variables
+
+* `FLASK_BINDING = 127.0.0.1:5000`
+* `SSL_CERT_FILE`
+* `SSL_KEY_FILE`
 
 * `USER_CONFIRMATION_EMAIL_SENDER = 'admin@my.domain'`
 * `USER_CONFIRMATION_EMAIL_RECIPIENT = 'someone@some.domain'`
