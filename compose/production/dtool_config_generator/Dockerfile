@@ -4,11 +4,11 @@ FROM python:3.9.7-slim
 # Checkout token generator
 #
 RUN apt-get --yes update && \
-    apt-get --no-install-recommends --yes install git && \
+    apt-get --no-install-recommends --yes install gcc git libc6-dev libpq-dev && \
     pip install --upgrade pip && \
     pip install git+https://github.com/livmats/dtool-config-generator.git && \
     pip install gunicorn && \
-    apt-get remove --purge --autoremove -y git && \
+    apt-get remove --purge --autoremove -y gcc git && \
     rm -rf /var/lib/apt/lists/*
 
 #
