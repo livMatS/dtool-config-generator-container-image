@@ -18,9 +18,12 @@ For overriding default templates and binding
 
 ## Environment variables
 
+* `SCRIP_NAME`
 * `FLASK_BINDING = 127.0.0.1:5000`
 * `SSL_CERT_FILE`
 * `SSL_KEY_FILE`
+
+## Flask config
 
 * `USER_CONFIRMATION_EMAIL_SENDER = 'admin@my.domain'`
 * `USER_CONFIRMATION_EMAIL_RECIPIENT = 'someone@some.domain'`
