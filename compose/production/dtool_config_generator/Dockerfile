@@ -1,6 +1,6 @@
 FROM python:3.10.0-slim
 
-ARG VERSION=0.1.0
+ARG VERSION=0.2.1
 #
 # Checkout token generator
 #
